@@ -8,15 +8,21 @@ use yii\db\Query;
 
 use app\models\RccUser;
 use app\models\RccUserSearch;
-use yii\web\Controller;
+//use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+
 
 /**
  * RccUserController implements the CRUD actions for RccUser model.
  */
-class RccUserController extends Controller
+class RccUserController extends CommonController
 {
+
+    /*登录才有权限访问的方法*/
+    public $loginAction = ['index','create','update','delete','assignitem','createitem','updateitem','deleteitem'];
+
+
     /**
      * @inheritdoc
      */
